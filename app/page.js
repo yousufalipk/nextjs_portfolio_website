@@ -1,101 +1,133 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { GrFacebookOption, GrGithub, GrInstagram, GrLinkedinOption } from "react-icons/gr";
+import AmeerYousufPic from '../public/ameeryousuf.png';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  const socialLinks = [
+    { icon: <GrFacebookOption size={25} />, altText: 'facebook', link: 'https://www.facebook.com/yousufbhatti2002' },
+    { icon: <GrGithub size={25} />, altText: 'github', link: 'https://github.com/yousufalipk' },
+    { icon: <GrInstagram size={25} />, altText: 'instagram', link: 'https://www.instagram.com/yousufbhatti_1' },
+    { icon: <GrLinkedinOption size={25} />, altText: 'linkedin', link: 'https://www.linkedin.com/in/yousufalipk' },
+  ];
+
+  return (
+    <>
+      <section className="parent relative w-full h-[115vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] flex flex-col overflow-hidden">
+        <div className="w-full h-[100vh] flex justify-center items-center overflow-hidden">
+          <div className="w-1/2 h-full flex flex-col items-start justify-center gap-5 pl-[10vw]">
+            <h1 className="text-8xl font-bold leading-[5.5vw] bg-gradient-to-tl from-[#ffffff] to-[#53cfd6] text-transparent bg-clip-text">
+              AMEER YOUSUF
+            </h1>
+            <p className="text-xl font-thin">
+              Founder & CEO at{' '}
+              <a
+                href="https://bhattisphere.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline opacity-80"
+              >
+                BhattiSphere.com
+              </a>{' '}
+              | Software Engineer | Innovator | MERN Stack Developer | AI & Automation Enthusiast | Building Next-Gen Tech Solutions
+            </p>
+            <div className="flex justify-start items-center gap-8">
+              {socialLinks.map((link, index) => (
+                <div
+                  key={index}
+                  className="w-12 h-12 flex justify-center items-center border-[3px] border-white rounded-full hover:translate-y-[-5px] transition-transform"
+                >
+                  <a
+                    href={link.link}
+                    alt={link.altText}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.icon}
+                  </a>
+                </div>
+              ))}
+            </div>
+            <div className="hover:translate-y-[-5px] transition-transform">
+              <a
+                href="https://www.linkedin.com/in/yousufalipk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-[#32b0b4] py-2 px-6 text-xl font-semibold rounded-3xl"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div className="w-1/2 h-full flex flex-col items-center gap-5 pr-[10vw]">
+            <p className="text-[32rem] font-bold absolute -top-[5vh]">AY</p>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={AmeerYousufPic}
+              alt="ameeryousuf_pic"
+              width={650}
+              height={650}
+              className="absolute bottom-14 z-20 transform scale-x-[-1]"
+              style={{
+                filter: 'drop-shadow(0 30px 25px rgba(0, 0, 0, 1))',
+              }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="w-full h-[15vh] flex justify-center items-center relative z-30 parent-bg">
+          <div className="ticker custom-gradient transform rotate-[-1deg] z-10">
+            <span className="ticker-text gradient-text text-2xl font-bold py-2">
+              Founder & CEO at BhattiSphere.com | Software Engineer | Innovator | MERN Stack Developer | AI & Automation Enthusiast | Building Next-Gen Tech Solutions
+            </span>
+            <span className="ticker-text gradient-text text-2xl font-bold py-2">
+              Founder & CEO at BhattiSphere.com | Software Engineer | Innovator | MERN Stack Developer | AI & Automation Enthusiast | Building Next-Gen Tech Solutions
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full h-[100vh] bg-[#202020] px-10 py-5 flex">
+        <div className="w-1/2 h-full flex flex-col justify-end items-center gap-4">
+          <h1 className="text-4xl font-bold">INTRODUCTION</h1>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={AmeerYousufPic}
+            alt="ameeryousuf_pic"
+            width={480}
+            height={480}
+            className="bg-white rounded-xl"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+        <div className="w-1/2 h-full flex flex-col justify-start items-center pt-10">
+          <div className="text-start flex flex-col gap-5">
+            <p>
+              Ameer Yousuf Ali Bhatti is a skilled software engineer and web developer from Islamabad, Pakistan, with a strong educational foundation from Bahria University and SZABIST. As a dynamic and motivated professional, he brings expertise in HTML, CSS, JavaScript, and the MERN stack, along with hands-on experience in GitHub and cloud platforms.
+            </p>
+            <p>
+              Ameer has gained valuable professional experience through internships at Mehdi Tech and NADRA. At Mehdi Tech, he honed his skills in React.js and Node.js, contributing to projects such as a Telegram dashboard app and mini-apps like a Tic Tac Toe game and Pizza App. At NADRA, he developed detailed dashboards using Power BI and Tableau, providing insights through advanced data analysis and visualization.
+            </p>
+            <p>
+              His commitment to innovation and problem-solving is evident in projects like "ClassConnect," a facial recognition-based attendance system, and "CyberSphereX," a custom chatbot utilizing GPT-3.5. He has consistently demonstrated the ability to independently manage projects while fostering collaboration within teams.
+            </p>
+            <p>
+              Ameer’s notable technical projects showcase his expertise in technologies such as Tailwind.css, Firebase, and JWT authentication. His strong analytical skills and willingness to learn have made him a valuable contributor to each initiative he undertakes. His GitHub repository is a testament to his practical experience and creative solutions in software engineering.
+            </p>
+            <p>
+              With a proactive approach to professional growth, Ameer continues to excel in the tech industry while actively building a network of like-minded professionals. To explore more about his work and career, visit his LinkedIn profile or GitHub repository.
+            </p>
+            <div className="w-full hover:translate-y-[-5px] transition-transform flex">
+              <a
+                href="https://www.linkedin.com/in/yousufalipk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-[#32b0b4] py-2 text-xl font-semibold rounded-3xl w-full text-center"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
