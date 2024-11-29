@@ -141,7 +141,7 @@ export default function Home() {
               Ameer has gained valuable professional experience through internships at Mehdi Tech and NADRA. At Mehdi Tech, he honed his skills in React.js and Node.js, contributing to projects such as a Telegram dashboard app and mini-apps like a Tic Tac Toe game and Pizza App. At NADRA, he developed detailed dashboards using Power BI and Tableau, providing insights through advanced data analysis and visualization.
             </p>
             <p>
-              His commitment to innovation and problem-solving is evident in projects like "ClassConnect," a facial recognition-based attendance system, and "CyberSphereX," a custom chatbot utilizing GPT-3.5. He has consistently demonstrated the ability to independently manage projects while fostering collaboration within teams.
+              His commitment to innovation and problem-solving is evident in projects like &quot;ClassConnect,&quot; a facial recognition-based attendance system, and &quot;CyberSphereX,&quot; a custom chatbot utilizing GPT-3.5. He has consistently demonstrated the ability to independently manage projects while fostering collaboration within teams.
             </p>
             <p>
               Ameer’s notable technical projects showcase his expertise in technologies such as Tailwind.css, Firebase, and JWT authentication. His strong analytical skills and willingness to learn have made him a valuable contributor to each initiative he undertakes. His GitHub repository is a testament to his practical experience and creative solutions in software engineering.
