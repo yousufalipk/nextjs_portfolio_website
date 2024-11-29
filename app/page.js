@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import InvertmentsImage from '../public/investments.webp';
 
 import { GrFacebookOption, GrGithub, GrInstagram, GrLinkedinOption } from "react-icons/gr";
 import AmeerYousufPic from '../public/ameeryousuf.png';
@@ -12,6 +13,39 @@ export default function Home() {
     { icon: <GrInstagram size={25} />, altText: 'instagram', link: 'https://www.instagram.com/yousufbhatti_1' },
     { icon: <GrLinkedinOption size={25} />, altText: 'linkedin', link: 'https://www.linkedin.com/in/yousufalipk' },
   ];
+
+  const topInvestments = [
+    { icon: '/investments/topInvestments/Abhi.webp', altText: 'abhi_logo' },
+    { icon: '/investments/topInvestments/bookme.pk.webp', altText: 'bookme_logo' },
+    { icon: '/investments/topInvestments/Haball.webp', altText: 'haball_logo' },
+    { icon: '/investments/topInvestments/Nayapay.webp', altText: 'nayapay_logo' },
+    { icon: '/investments/topInvestments/PostEx..webp', altText: 'postex_logo' }
+  ]
+
+  const midLeftInvertments = [
+    { icon: '/investments/midLeftInvestments/AdalFi.webp', altText: 'adalfi_logo' },
+    { icon: '/investments/midLeftInvestments/Bazaar.webp', altText: 'bazaar_logo' },
+    { icon: '/investments/midLeftInvestments/EduFi.webp', altText: 'edufi_logo' },
+    { icon: '/investments/midLeftInvestments/KTrade.webp', altText: 'ktrade_logo' },
+    { icon: '/investments/midLeftInvestments/Laam.webp', altText: 'laam_logo' },
+    { icon: '/investments/midLeftInvestments/SnappRetail.webp', altText: 'snappRetail_logo' }
+  ]
+
+  const midRightInvertments = [
+    { icon: '/investments/midRightInvestments/GrocerApp.webp', altText: 'grocerapp_logo' },
+    { icon: '/investments/midRightInvestments/KraveMart.webp', altText: 'kravemart_logo' },
+    { icon: '/investments/midRightInvestments/Prosper.webp', altText: 'prosper_logo' },
+    { icon: '/investments/midRightInvestments/Savyour.webp', altText: 'savyour_logo' },
+    { icon: '/investments/midRightInvestments/Truckitin.webp', altText: 'truckitin_logo' }
+  ]
+
+  const bottomInvestments = [
+    { icon: '/investments/bottomInvetments/BaGallery.webp', altText: 'bagallery_logo' },
+    { icon: '/investments/bottomInvetments/Collabs.webp', altText: 'collabs_logo' },
+    { icon: '/investments/bottomInvetments/Taaza.webp', altText: 'taaza_logo' },
+    { icon: '/investments/bottomInvetments/TrellisHousing.webp', altText: 'trellisHousing_logo' },
+    { icon: '/investments/bottomInvetments/Zaraye.webp', altText: 'zaraye_logo' }
+  ]
 
   return (
     <>
@@ -87,8 +121,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full h-[100vh] bg-[#202020] px-10 py-5 flex">
-        <div className="w-1/2 h-full flex flex-col justify-end items-center gap-4">
+      <section className="w-full h-[120vh] bg-[#202020] px-10 py-5 flex">
+        <div className="w-1/2 h-full flex flex-col justify-end pb-[4vw] items-center gap-4">
           <h1 className="text-4xl font-bold">INTRODUCTION</h1>
           <Image
             src={AmeerYousufPic}
@@ -126,6 +160,71 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full h-[100vh] bg-[#e8edff] flex flex-col justify-center items-center py-20 gap-10">
+        <div className="w-[70vw] h-[10vh] flex justify-evenly items-center gap-20 bg-white rounded-full shadow-lg">
+          {topInvestments.map((investment, index) => {
+            return (
+              <Image
+                key={index}
+                src={investment.icon}
+                alt={investment.altText}
+                width={100}
+                height={100}
+              />
+            )
+          })}
+        </div>
+        <div className="w-full h-[40vh] flex justify-center items-center">
+          <div className="w-[20%] h-full grid grid-cols-2 justify-items-center items-center bg-white rounded-3xl">
+            {midLeftInvertments.map((investment, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={investment.icon}
+                  alt={investment.altText}
+                  width={100}
+                  height={100}
+                />
+              )
+            })}
+          </div>
+          <div className="w-[30%] h-full flex justify-center items-center animate-beat">
+            <Image
+              src={InvertmentsImage}
+              alt="invertments_img"
+              width={260}
+              height={260}
+            />
+          </div>
+          <div className="w-[20%] h-full grid grid-cols-2 justify-items-center items-center bg-white rounded-3xl">
+            {midRightInvertments.map((investment, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={investment.icon}
+                  alt={investment.altText}
+                  width={100}
+                  height={100}
+                />
+              )
+            })}
+          </div>
+        </div>
+        <div className="w-[70vw] h-[10vh] flex justify-evenly items-center gap-20 bg-white rounded-full shadow-lg">
+          {bottomInvestments.map((investment, index) => {
+            return (
+              <Image
+                key={index}
+                src={investment.icon}
+                alt={investment.altText}
+                width={100}
+                height={100}
+              />
+            )
+          })}
         </div>
       </section>
     </>
