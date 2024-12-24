@@ -19,12 +19,12 @@ export const metadata = {
   openGraph: {
     title: "Ameer Yousuf Ali Bhatti - Software Engineer & Full-Stack Developer",
     description: "Welcome to the official website of Ameer Yousuf Ali Bhatti, a skilled web developer and software engineer based in Pakistan. Explore innovative, user-friendly solutions.",
-    url: "https://ameeryousuf.com", // Replace with your actual URL
+    url: "https://ameeryousuf.com",
     siteName: "Ameer Yousuf Ali Bhatti",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yousufalipk", // Replace with your Twitter handle
+    site: "@yousufalipk",
     title: "Ameer Yousuf Ali Bhatti - Software Engineer & Full-Stack Developer",
     description: "Welcome to the official website of Ameer Yousuf Ali Bhatti, a skilled web developer and software engineer based in Pakistan.",
   },

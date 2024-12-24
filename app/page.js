@@ -14,10 +14,10 @@ import AmeerYousufPic from '../public/ameeryousuf.png';
 export default function Home() {
 
   const socialLinks = [
-    { icon: <GrFacebookOption size={25} />, altText: 'facebook', link: 'https://www.facebook.com/yousufbhatti2002' },
-    { icon: <GrGithub size={25} />, altText: 'github', link: 'https://github.com/yousufalipk' },
-    { icon: <GrInstagram size={25} />, altText: 'instagram', link: 'https://www.instagram.com/yousufbhatti_1' },
-    { icon: <GrLinkedinOption size={25} />, altText: 'linkedin', link: 'https://www.linkedin.com/in/yousufalipk' },
+    { Component: GrFacebookOption, altText: 'facebook', link: 'https://www.facebook.com/yousufbhatti2002' },
+    { Component: GrGithub, altText: 'github', link: 'https://github.com/yousufalipk' },
+    { Component: GrInstagram, altText: 'instagram', link: 'https://www.instagram.com/yousufbhatti_1' },
+    { Component: GrLinkedinOption, altText: 'linkedin', link: 'https://www.linkedin.com/in/yousufalipk' },
   ];
 
   const topTechStack = [
@@ -66,13 +66,13 @@ export default function Home() {
     <>
       {/* Landing Page 1 */}
       <section id="home" className="parent relative w-full h-[115vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] flex flex-col overflow-hidden">
-        <div className="w-full h-[100vh] flex justify-center items-center">
+        <div className="w-full h-[100vh] flex flex-col md:flex-row justify-center items-center">
           {/* Left Section */}
-          <div className="animate-slideUpLeftLanding w-1/2 h-full flex flex-col items-start justify-center gap-5 pl-[10vw]">
-            <h1 className="text-8xl font-bold leading-[5.5vw] bg-gradient-to-tl from-[#ffffff] to-[#53cfd6] text-transparent bg-clip-text">
+          <div className="animate-slideUpLeftLanding w-[80%] md:w-1/2 h-1/2 md:h-full flex flex-col items-center md:items-start justify-center gap-5 md:pl-[10vw]">
+            <h1 className="text-center md:text-start text-5xl md:text-6xl lg:text-8xl font-bold leading-10 md:leading-[5.5vw] bg-gradient-to-tl from-[#ffffff] to-[#53cfd6] text-transparent bg-clip-text">
               AMEER YOUSUF
             </h1>
-            <p className="text-xl font-thin">
+            <p className="text-center md:text-start text-sm md:text-sm lg:text-xl font-thin">
               Founder & CEO at{' '}
               <a
                 href="https://bhattisphere.com"
@@ -85,42 +85,43 @@ export default function Home() {
               | Software Engineer | Innovator | MERN Stack Developer | AI & Automation Enthusiast | Building Next-Gen Tech Solutions
             </p>
             <div className="flex justify-start items-center gap-8">
-              {socialLinks.map((link, index) => (
-                <div
-                  key={index}
-                  className="w-12 h-12 flex justify-center items-center border-[3px] border-white rounded-full hover:translate-y-[-5px] transition-transform"
-                >
-                  <a
-                    href={link.link}
-                    alt={link.altText}
-                    target="_blank"
-                    rel="noopener noreferrer"
+              {socialLinks.map((link, index) => {
+                const Icon = link.Component;
+                return (
+                  <div
+                    key={index}
+                    className="w-9 h-9 md:w-8 md:h-8 lg:w-12 lg:h-12 flex justify-center items-center border-[3px] border-white rounded-full hover:translate-y-[-5px] transition-transform"
                   >
-                    {link.icon}
-                  </a>
-                </div>
-              ))}
+                    <a
+                      href={link.link}
+                      alt={link.altText}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon className="w-5 h-5 md:w-4 md:h-4 lg:w-7 lg:h-7" />
+                    </a>
+                  </div>
+                )
+              })}
             </div>
             <div className="hover:translate-y-[-5px] transition-transform">
               <a
                 href="https://www.linkedin.com/in/yousufalipk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-[#32b0b4] py-2 px-6 text-xl font-semibold rounded-3xl"
+                className="bg-white text-[#32b0b4] py-1 px-3 md:py-2 md:px-6 text-lg md:text-xl font-semibold rounded-3xl"
               >
                 Learn More
               </a>
             </div>
           </div>
           {/* Right Section */}
-          <div className="opacity-0 animate-slideUpRightLanding w-1/2 h-full flex flex-col items-center gap-5 pr-[10vw]">
-            <p className="text-[32rem] font-bold absolute -top-[5vh]">AY</p>
+          <div className="opacity-0 animate-slideUpRightLanding w-full md:w-1/2 h-1/2 md:h-full flex flex-col items-center gap-5 pr-0 md:pr-[10vw]">
+            <p className="text-[15rem] md:text-[22rem] lg:text-[32rem] font-bold absolute top-0 md:top-[8vh] lg:-top-[5vh]">AY</p>
             <Image
               src={AmeerYousufPic}
               alt="ameeryousuf_pic"
-              width={650}
-              height={650}
-              className="absolute -bottom-14 z-20 transform scale-x-[-1]"
+              className="absolute -bottom-14 z-20 transform scale-x-[-1] w-[380px] h-[380px] lg:h-[650px] lg:w-[650px]"
               style={{
                 filter: 'drop-shadow(0 30px 25px rgba(0, 0, 0, 1))',
               }}
