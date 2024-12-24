@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <>
       {/* Landing Page 1 */}
-      <section id="home" className="parent relative w-full h-[115vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] flex flex-col overflow-hidden">
+      <section id="home" className="parent relative w-full h-[90vh] md:h-[115vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] flex flex-col">
         <div className="w-full h-[100vh] flex flex-col md:flex-row justify-center items-center">
           {/* Left Section */}
           <div className="animate-slideUpLeftLanding w-[80%] md:w-1/2 h-1/2 md:h-full flex flex-col items-center md:items-start justify-center gap-5 md:pl-[10vw]">
@@ -128,7 +128,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="w-full h-[15vh] flex justify-center items-center relative z-30 parent-bg">
+        <div className="absolute -bottom-2 w-full h-[15vh] flex justify-center items-center parent-bg">
           <div className="ticker custom-gradient transform rotate-[-1deg] z-10">
             <span className="ticker-text gradient-text text-2xl font-bold py-2">
               Founder & CEO at BhattiSphere.com | Software Engineer | Innovator | MERN Stack Developer | AI & Automation Enthusiast | Building Next-Gen Tech Solutions
@@ -141,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* Introduction Page 2 */}
-      <section id="intro" className="w-full h-[120vh] bg-[#202020] px-10 py-5 flex overflow-x-hidden">
+      <section id="intro" className="relative z-50 w-full h-[120vh] bg-[#202020] px-10 py-5 flex overflow-x-hidden">
         {/* Left Secction */}
         <div className="animate-slideUpLeftIntro w-1/2 h-full flex flex-col justify-end pb-[4vw] items-center gap-4">
           <h1 className="text-4xl font-bold">INTRODUCTION</h1>
