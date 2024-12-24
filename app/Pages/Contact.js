@@ -45,16 +45,16 @@ const Contact = () => {
     };
 
     return (
-        <div className='w-[90%] h-[90%] flex justify-center items-center shadow-lg mx-auto rounded-2xl'>
-            <div className='w-1/2 h-full flex justify-center items-center'>
+        <div className='w-[90%] h-[90%] flex flex-col md:flex-row justify-center items-center shadow-lg mx-auto rounded-2xl'>
+            <div className='w-full md:w-1/2 h-1/2 md:h-full flex justify-center items-center'>
                 <Image
                     src={ContactPic}
-                    width={450}
-                    height={450}
+                    width={400}
+                    height={400}
                     alt="contact_pic"
                 />
             </div>
-            <div className='w-1/2 h-full flex flex-col justify-center items-center'>
+            <div className='w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center items-center'>
                 <form
                     className='w-[80%] h-full flex flex-col gap-5 justify-center items-center'
                     onSubmit={handleSubmit}

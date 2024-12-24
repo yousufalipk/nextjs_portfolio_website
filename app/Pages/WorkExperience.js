@@ -13,7 +13,7 @@ const WorkExperience = () => {
     return (
         <div className='w-full h-full'>
             <div className="w-full h-[30vh] flex justify-center items-center yt-card-text">
-                <h1 className="gradient-text2 text-5xl font-bold">Work Experience</h1>
+                <h1 className="gradient-text2 text-5xl font-bold text-center">Work Experience</h1>
             </div>
             <VerticalTimeline>
                 <VerticalTimelineElement

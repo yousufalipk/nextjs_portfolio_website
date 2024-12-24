@@ -55,11 +55,11 @@ export default function Home() {
   ]
 
   const youtubeVideos = [
-    { image: '/youtube/yt1.png', title: 'Intro to MERN Stack', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
-    { image: '/youtube/yt2.png', title: 'Understanding React.js', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
-    { image: '/youtube/yt3.jpeg', title: 'Node.js for Beginners', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
-    { image: '/youtube/yt4.png', title: 'Express.js Tutorial', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
-    { image: '/youtube/yt5.png', title: 'MongoDB Basics', link: 'https://www.youtube.com/watch?v=XXXXXXX' }
+    { image: '/youtube/yt1.png', title: 'Class Connect (FYP)', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
+    { image: '/youtube/yt2.png', title: 'Loan Prediction System', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
+    { image: '/youtube/yt3.jpeg', title: 'Chat Bot Gpt-3.5', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
+    { image: '/youtube/yt4.png', title: 'BURAQ Luxury Rentals', link: 'https://www.youtube.com/watch?v=XXXXXXX' },
+    { image: '/youtube/yt5.png', title: 'Panda Tap & Kvants TMA', link: 'https://www.youtube.com/watch?v=XXXXXXX' }
   ];
 
   return (
@@ -273,7 +273,7 @@ export default function Home() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        id="projects" className="w-full h-[100vh]"
+        id="projects" className="w-full h-[98vh] md:h-[100vh] overflow-hidden"
       >
         <div className="absolute z-0 w-full h-full bg-cyan-800 bg-opacity-70"></div>
         <div className="absolute z-10 w-full h-full flex flex-col justify-center items-center">
@@ -282,14 +282,17 @@ export default function Home() {
             <div className="stock-child">
               {youtubeVideos.map((video, index) => {
                 return (
-                  <div key={index} className="w-[30vw] hover:translate-y-[-20px] transition-transform flex flex-col gap-4">
-                    <Image
-                      src={video.image}
-                      alt="youtube_video"
-                      width={500}
-                      height={500}
-                      className="rounded-3xl"
-                    />
+                  <div key={index} className="w-[90vw] md:w-[30vw] hover:translate-y-[-20px] transition-transform flex flex-col gap-4">
+                    <div
+                      style={{
+                        backgroundImage: `url(${video.image})`,
+                        backgroundAttachment: 'fixed',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                      className="w-full h-[30vh] rounded-3xl"
+                    >
+                    </div>
                     <div className="w-full bg-white yt-card-text rounded-full text-center font-bold text-xl p-2 text-black">
                       <span className="gradient-text">{video.title}</span>
                     </div>
@@ -300,14 +303,17 @@ export default function Home() {
             <div aria-hidden='true' className="stock-child">
               {youtubeVideos.map((video, index) => {
                 return (
-                  <div key={index} className="w-[30vw] hover:translate-y-[-20px] transition-transform flex flex-col gap-4">
-                    <Image
-                      src={video.image}
-                      alt="youtube_video"
-                      width={500}
-                      height={500}
-                      className="rounded-3xl"
-                    />
+                  <div key={index} className="w-[90vw] md:w-[30vw] hover:translate-y-[-20px] transition-transform flex flex-col gap-4">
+                    <div
+                      style={{
+                        backgroundImage: `url(${video.image})`,
+                        backgroundAttachment: 'fixed',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                      className="w-full h-[30vh] rounded-3xl"
+                    >
+                    </div>
                     <div className="w-full bg-white yt-card-text rounded-full text-center font-bold text-xl p-2 text-black">
                       <span className="gradient-text">{video.title}</span>
                     </div>
@@ -330,7 +336,7 @@ export default function Home() {
       </section>
 
       {/* Contact Us */}
-      <section className="w-full h-[100vh]">
+      <section className="w-full h-[150vh] md:h-[100vh]">
         <ContactUs />
       </section>
 
@@ -341,8 +347,8 @@ export default function Home() {
 
       {/* Footer - social link - other */}
       <section className="relative z-50 w-full h-[25vh] bg-white flex justify-center">
-        <div className="absolute -top-1/2 w-[60%] h-[40vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] rounded-[6vh] flex flex-col justify-center items-center p-5">
-          <ul className="w-[80%] h-1/2 flex justify-between items-center text-lg font-semibold">
+        <div className="absolute -top-1/2 w-[90%] md:w-[60%] h-[40vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] rounded-[6vh] flex flex-col justify-center items-center p-5 gap-5 md:gap-2">
+          <ul className="w-[80%] h-1/2 flex flex-col md:flex-row justify-between items-center text-lg font-thin gap-2 md:gap-0 lg:font-semibold">
             <li className="hover:cursor-pointer">
               <Link href='#intro' >About</Link>
             </li>
@@ -359,28 +365,31 @@ export default function Home() {
               <Link href='#review' >Reviews & Feedback</Link>
             </li>
           </ul>
-          <div className="w-2/5 h-1/2 flex justify-between items-center">
-            {socialLinks.map((link, index) => (
-              <div
-                key={index}
-                className="w-12 h-12 flex justify-center items-center border-[3px] border-white rounded-full hover:translate-y-[-5px] transition-transform"
-              >
-                <a
-                  href={link.link}
-                  alt={link.altText}
-                  target="_blank"
-                  rel="noopener noreferrer"
+          <div className="w-[90%] md:w-2/5 h-1/2 flex justify-between items-center">
+            {socialLinks.map((link, index) => {
+              const Icon = link.Component;
+              return (
+                <div
+                  key={index}
+                  className="w-9 h-9 md:w-8 md:h-8 lg:w-12 lg:h-12 flex justify-center items-center border-[3px] border-white rounded-full hover:translate-y-[-5px] transition-transform"
                 >
-                  {link.icon}
-                </a>
-              </div>
-            ))}
+                  <a
+                    href={link.link}
+                    alt={link.altText}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon className="w-5 h-5 md:w-4 md:h-4 lg:w-7 lg:h-7" />
+                  </a>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Footer - Copyrights */}
-      <section className="w-full h-[25vh] flex flex-col justify-center items-center gap-5 bg-white">
+      <section className="w-full h-[15vh] md:h-[25vh] flex flex-col justify-center items-center gap-5 bg-white">
         <hr className="w-[60vw]" />
         <div className="w-full text-gray-500 text-center">
           © 2023 Ameer Yousuf. All Rights Reserved

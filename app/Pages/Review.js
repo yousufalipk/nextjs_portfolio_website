@@ -66,21 +66,24 @@ const Reviews = () => {
         >
             <div className='absolute z-0 w-full h-full bg-gradient-to-t from-[#32b0b4] to-[#42548a] opacity-70'></div>
             <div className='absolute z-10 w-full h-full'>
-                <div className="relative w-full h-full flex justify-center items-center">
-                    <h1 className='absolute top-[10%] text-4xl font-bold text-white text-center'>
+                <div className="relative w-full h-full flex flex-col justify-center items-center">
+                    <h1 className='absolute top-[10%] text-xl px-5 md:px-0 md:text-4xl font-bold text-white text-center'>
                         {'What Do People Think About Ameer Yousuf’s Work?'}
                     </h1>
+
                     <div className="w-full h-[40%] flex justify-center items-center text-white">
-                        <div className="w-[15%] h-full flex justify-center items-center">
+
+                        <div className="hidden md:flex w-[15%] h-full justify-center items-center">
                             {currentReviewIndex > 0 && (
                                 <button onClick={handlePrev} className="bg-transparent border-0">
                                     <Image src={LeftAngle} width={100} height={100} alt="prev" className='invert' />
                                 </button>
                             )}
                         </div>
-                        <div className='w-[70%] h-full flex justify-center items-center'>
+
+                        <div className='w-[90%] md:w-[70%] h-full flex justify-center items-center'>
                             <div
-                                className="w-1/2 h-full bg-gradient-to-t from-[#32b0b4] to-[#42548a] border rounded-[6vh] p-10 relative"
+                                className="w-full md:w-1/2 h-full bg-gradient-to-t from-[#32b0b4] to-[#42548a] border rounded-[6vh] p-10 relative"
                             >
                                 <div className="w-full h-1/2 flex justify-start items-center text-justify font-light text-gray-200">
                                     {reviews[currentReviewIndex].feedback}
@@ -104,13 +107,15 @@ const Reviews = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[15%] h-full flex justify-center items-center">
+
+                        <div className="hidden md:flex w-[15%] h-full justify-center items-center">
                             {currentReviewIndex < reviews.length - 1 && (
                                 <button onClick={handleNext} className="bg-transparent border-0">
                                     <Image src={RightAngle} width={100} height={100} alt="next" className='invert' />
                                 </button>
                             )}
                         </div>
+
                         {/* Review Tracker */}
                         <div className="absolute bottom-[25%] flex gap-2">
                             {reviews.map((_, index) => (
@@ -119,6 +124,24 @@ const Reviews = () => {
                                     className={`w-3 h-3 rounded-full ${currentReviewIndex === index ? 'bg-white' : 'bg-gray-300 opacity-35'}`}
                                 />
                             ))}
+                        </div>
+                    </div>
+
+                    <div className='w-full h-[10vh] flex justify-center items-center md:hidden gap-10 absolute bottom-28'>
+                        <div className="flex md:hidden w-[25%] h-full justify-center items-center">
+                            {currentReviewIndex > 0 && (
+                                <button onClick={handlePrev} className="bg-transparent border-0">
+                                    <Image src={LeftAngle} width={300} height={300} alt="prev" className='invert' />
+                                </button>
+                            )}
+                        </div>
+
+                        <div className="flex md:hidden w-[25%] h-full justify-center items-center">
+                            {currentReviewIndex < reviews.length - 1 && (
+                                <button onClick={handleNext} className="bg-transparent border-0">
+                                    <Image src={RightAngle} width={300} height={300} alt="next" className='invert' />
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
