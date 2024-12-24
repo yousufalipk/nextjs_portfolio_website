@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <>
       {/* Landing Page 1 */}
-      <section id="home" className="parent relative w-full h-[90vh] md:h-[115vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] flex flex-col">
+      <section id="home" className="parent relative w-full h-[90vh] md:h-[115vh] bg-gradient-to-t from-[#32b0b4] to-[#42548a] flex flex-col overflow-hidden">
         <div className="w-full h-[100vh] flex flex-col md:flex-row justify-center items-center">
           {/* Left Section */}
           <div className="animate-slideUpLeftLanding w-[80%] md:w-1/2 h-1/2 md:h-full flex flex-col items-center md:items-start justify-center gap-5 md:pl-[10vw]">
@@ -141,20 +141,18 @@ export default function Home() {
       </section>
 
       {/* Introduction Page 2 */}
-      <section id="intro" className="relative z-50 w-full h-[120vh] bg-[#202020] px-10 py-5 flex overflow-x-hidden">
+      <section id="intro" className="relative z-50 w-full md:h-[120vh] bg-[#202020] px-10 py-16 md:py-5 flex flex-col md:flex-row justify-center items-center overflow-hidden">
         {/* Left Secction */}
-        <div className="animate-slideUpLeftIntro w-1/2 h-full flex flex-col justify-end pb-[4vw] items-center gap-4">
+        <div className="animate-slideUpLeftIntro w-full md:w-1/2 h-[20%] md:h-full flex flex-col justify-end pb-[4vw] items-center gap-4">
           <h1 className="text-4xl font-bold">INTRODUCTION</h1>
           <Image
             src={AmeerYousufPic}
             alt="ameeryousuf_pic"
-            width={480}
-            height={480}
-            className="bg-white rounded-xl"
+            className="bg-white rounded-xl w-[380px] h-[380px] lg:h-[650px] lg:w-[650px]"
           />
         </div>
         {/* Right Section */}
-        <div className="opacity-0 animate-slideUpRightIntro w-1/2 h-full flex flex-col justify-start items-center pt-10">
+        <div className="opacity-0 animate-slideUpRightIntro w-full md:w-1/2 h-[80%] md:h-full flex flex-col justify-start items-center pt-10">
           <div className="text-start flex flex-col gap-5">
             <p>
               Ameer Yousuf Ali Bhatti is a skilled software engineer and web developer from Islamabad, Pakistan, with a strong educational foundation from Bahria University and SZABIST. As a dynamic and motivated professional, he brings expertise in HTML, CSS, JavaScript, and the MERN stack, along with hands-on experience in GitHub and cloud platforms.
@@ -186,24 +184,33 @@ export default function Home() {
       </section>
 
       {/* TechStack Page 3 */}
-      <section id="techstack" className="w-full h-[100vh] bg-[#e8edff] overflow-hidden">
-        <div className="opacity-0 animate-slideUpRightTech flex flex-col justify-center items-center py-20 gap-10">
-          <div className="w-[70vw] h-[10vh] flex justify-evenly items-center gap-20 bg-white rounded-full shadow-lg">
+      <section id="techstack" className="w-full md:h-[100vh] bg-[#e8edff] overflow-hidden">
+        <div className="w-full h-[50vh] flex md:hidden justify-center items-center">
+          <Image
+            src={StackImage}
+            alt="teachStack_img"
+            width={300}
+            height={300}
+            className="hover-effect2"
+          />
+        </div>
+        <div className="opacity-0 animate-slideUpRightTech flex flex-col justify-center items-center py-5 md:py-20 gap-5 md:gap-10">
+          <div className="w-[80vw] md:w-[70vw] h-[7vh] md:h-[10vh] flex justify-evenly items-center gap-5 md:gap-15 lg:gap-20 bg-white rounded-full shadow-lg">
             {topTechStack.map((stack, index) => {
               return (
                 <Image
                   key={index}
                   src={stack.icon}
                   alt={stack.altText}
-                  width={50}
-                  height={50}
-                  className="hover-effect1"
+                  width={380}
+                  height={380}
+                  className="hover-effect1 w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px]"
                 />
               )
             })}
           </div>
-          <div className="w-full h-[40vh] flex justify-center items-center">
-            <div className="w-[20%] h-full grid grid-cols-2 justify-items-center items-center bg-white rounded-3xl shadow-lg">
+          <div className="w-full h-[40vh] flex justify-center items-center gap-5 md:gap-0">
+            <div className="w-[39%] md:w-[20%] h-full grid grid-cols-2 justify-items-center items-center bg-white rounded-3xl shadow-lg">
               {midLeftStack.map((stack, index) => {
                 return (
                   <Image
@@ -212,12 +219,12 @@ export default function Home() {
                     alt={stack.altText}
                     width={50}
                     height={50}
-                    className="hover-effect1"
+                    className="hover-effect1 w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px]"
                   />
                 )
               })}
             </div>
-            <div className="w-[30%] h-full flex justify-center items-center animate-beat">
+            <div className="hidden md:flex w-[30%] h-full justify-center items-center animate-beat">
               <Image
                 src={StackImage}
                 alt="teachStack_img"
@@ -226,7 +233,7 @@ export default function Home() {
                 className="hover-effect2"
               />
             </div>
-            <div className="w-[20%] h-full grid grid-cols-2 justify-items-center items-center bg-white rounded-3xl shadow-lg">
+            <div className="w-[39%] md:w-[20%] h-full grid grid-cols-2 justify-items-center items-center bg-white rounded-3xl shadow-lg">
               {midRightStack.map((stack, index) => {
                 return (
                   <Image
@@ -235,13 +242,13 @@ export default function Home() {
                     alt={stack.altText}
                     width={50}
                     height={50}
-                    className="hover-effect1"
+                    className="hover-effect1 w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px]"
                   />
                 )
               })}
             </div>
           </div>
-          <div className="w-[70vw] h-[10vh] flex justify-evenly items-center gap-20 bg-white rounded-full shadow-lg">
+          <div className="w-[80vw] md:w-[70vw] h-[7vh] md:h-[10vh] flex justify-evenly items-center gap-5 md:gap-15 lg:gap-20 bg-white rounded-full shadow-lg">
             {bottomStack.map((stack, index) => {
               return (
                 <Image
@@ -250,7 +257,7 @@ export default function Home() {
                   alt={stack.altText}
                   width={50}
                   height={50}
-                  className="hover-effect1"
+                  className="hover-effect1 w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px]"
                 />
               )
             })}
