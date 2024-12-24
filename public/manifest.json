@@ -1,0 +1,35 @@
+{
+    "name": "Ameer Yousuf Ali Bhatti - Web Developer & Software Engineer",
+    "short_name": "Ameer Yousuf Ali Bhatti",
+    "description": "Official website of Ameer Yousuf Ali Bhatti, a skilled web developer and software engineer. Offering web development and software engineering solutions including MERN stack, Vue.js, and more.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "icons": [
+      {
+        "src": "/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "author": "Ameer Yousuf Ali Bhatti",
+    "contact_email": "ameeryousuf.pk@gmail.com",
+    "contact_phone": "03021223335",
+    "keywords": [
+      "Ameer Yousuf",
+      "Ameer Yousuf Ali Bhatti",
+      "Yousuf Bhatti",
+      "Web Developer",
+      "Software Engineer",
+      "Full-Stack Developer",
+      "MERN Stack",
+      "Ameer Yousuf Contact"
+    ]
+  }
+  
